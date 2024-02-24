@@ -5,17 +5,16 @@
 # Why?
 
 [The official recommendation](https://help.jagex.com/hc/en-gb/articles/13413514881937-Downloading-the-Jagex-Launcher-on-Linux)
-points to several community projects, most which run the launcher in Wine or similar. I wanted a native solution, or one
-that was more reasonable than installing a 1.5GB compatibility layer just to run the launcher.
+points to several community projects, most of which involve running the launcher in Wine or a similar environment. However, I really wanted a native solution, or one
+that didn't require installing a 1.5GB compatibility layer solely for launcher functionality.
 
-There's a similarly named project that *does* work natively in Linux (and functionality-wise it simply *just works*);
-however there were some boxes that it didn't tick for me:
+While there is a project that served as the inspiration for this one, and functions seamlessly on Linux, there were some boxes that it didn't tick for me:
 
-- It's installation size is ~460MB
-- It doesn't support overriding the client launch command/environment
+- Its installation size is ~460MB
+- Lack of support for overriding the client launch command/environment
 - It's a bit of a pain to compile
 
-In comparison, the linux-amd64 build for `golt` is only 6.8MB.
+In comparison, the linux-amd64 build for `golt` is a single 6.8MB binary.
 
 # Installation
 
