@@ -18,7 +18,7 @@ In comparison, the linux-amd64 build for `golt` is a single 6.8MB binary.
 
 # Installation
 
-Either download the latest binary form the Releases page, or build it yourself, and add it to your `PATH`.
+Either download the latest binary from the [Releases](https://github.com/chowder/golt/releases) page (or build it yourself), and add it to a directory on your `PATH`.
 
 Then, create a desktop entry for the application:
 
