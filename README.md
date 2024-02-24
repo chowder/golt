@@ -1,6 +1,6 @@
 # ⚔️ golt
 
-**golt** is a third-party game launcher for OldSchool Runescape.
+**golt** is a CLI-based third-party game launcher for OldSchool Runescape.
 
 # Why?
 
@@ -15,7 +15,7 @@ however there were some boxes that it didn't tick for me:
 - It doesn't support overriding the client launch command/environment
 - It's a bit of a pain to compile
 
-In comparison, the linux-amd64 build for **golt** is only 6.8MB.
+In comparison, the linux-amd64 build for `golt` is only 6.8MB.
 
 # Installation
 
@@ -47,6 +47,7 @@ sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-p
 
 <details>
     <summary>Why?</summary>
+
 The login flow is currently done in the browser:
 
 - The OAuth login redirects to a page which invokes a scheme handler
@@ -54,7 +55,8 @@ The login flow is currently done in the browser:
 
 These redirect URLs are validated server side, so cannot be modified on the client side. 
 
-As for the iptable entry, most Linux distros don't allow binding to port 80, so **golt** binds to port 8080 instead. 
+As for the iptable entry, most Linux distros don't allow binding to port 80, so `golt` binds to port 8080 instead. 
+
 </details>
 
 # Configuration
