@@ -47,14 +47,14 @@ sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-p
 
 <details>
     <summary>Why?</summary>
-    The login flow is currently done in the browser:
+The login flow is currently done in the browser:
 
-    - The OAuth login redirects to a page which invokes a scheme handler
-    - The game login step redirects to `http://localhost`
+- The OAuth login redirects to a page which invokes a scheme handler
+- The game login step redirects to `http://localhost`
 
-    These redirect URLs are validated server side, so cannot be modified on the client side. 
+These redirect URLs are validated server side, so cannot be modified on the client side. 
 
-    As for the iptable entry, most Linux distros don't allow binding to port 80, so **golt** binds to port 8080 instead. 
+As for the iptable entry, most Linux distros don't allow binding to port 80, so **golt** binds to port 8080 instead. 
 </details>
 
 # Configuration
