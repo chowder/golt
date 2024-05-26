@@ -11,7 +11,9 @@ import (
 	"github.com/pkg/browser"
 	"golang.org/x/oauth2"
 	"log"
+	"os"
 	"net/http"
+	"strconv"
 	"strings"
 )
 
@@ -179,10 +181,22 @@ func StandardLogin(idToken string) (*Tuple[string, string], error) {
 		channel <- Tuple[string, string]{code, idToken}
 	})
 
+	port := 8080 
+	
+	if val, exists := os.LookupEnv("GOLT_BIND_PORT"); exists {
+		var err error
+		port, err = strconv.Atoi(val)
+		if err != nil {
+			Die(errors.New("could not parse GOLT_BIND_PORT as integer"))
+		}
+	}
+
+	log.Println("Binding to port:", port)
+
 	// Start the server
 	server := &http.Server{
 		// TODO: sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
-		Addr:    ":8080",
+		Addr:    ":" + strconv.Itoa(port),
 		Handler: nil,
 	}
 	go func() {
