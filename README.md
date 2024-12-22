@@ -23,7 +23,7 @@ In comparison, the linux-amd64 build for `golt` is a single 6.8MB binary.
 Either download the latest binary from the [Releases](https://github.com/chowder/golt/releases) page (or build it
 yourself), and add it to a directory on your `PATH`.
 
-Then, create a desktop entry for the application:
+Then, create a desktop entry for this application:
 
 ```
 [Desktop Entry]
@@ -33,17 +33,27 @@ Exec=golt %U
 StartupNotify=true
 Terminal=true
 MimeType=x-scheme-handler/jagex;
+Categories=Game;
+Name[en_US]=golt
 ```
+
+Place it under `/usr/share/applications/golt.desktop`
 
 Then, register it to be the default handler for the `jagex:<...>` scheme:
 
-```
+```bash
 xdg-mime default golt.desktop x-scheme-handler/jagex
+```
+
+And reload the MIME-types database:
+
+```bash
+update-desktop-database
 ```
 
 Finally, set up an iptable entry to redirect `localhost:80` to `localhost:8080`:
 
-```
+```bash
 sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
 ```
 
