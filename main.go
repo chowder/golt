@@ -130,9 +130,7 @@ func handleRegularLaunch() error {
 	if err != nil {
 		log.Println("Could not load cached tokens, initiating regular login flow")
 		err := golt.Login()
-		if err != nil {
-			return err
-		}
+		return err
 	}
 
 	log.Println("Loaded cached tokens")
@@ -140,9 +138,7 @@ func handleRegularLaunch() error {
 	if err != nil {
 		log.Println("Could not login with cached tokens, initiating regular login flow")
 		err := golt.Login()
-		if err != nil {
-			return err
-		}
+		return err
 	}
 
 	return nil
