@@ -9,7 +9,7 @@ require (
 	github.com/go-resty/resty/v2 v2.16.2
 	github.com/google/uuid v1.6.0
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c
-	golang.org/x/oauth2 v0.24.0
+	golang.org/x/oauth2 v0.27.0
 )
 
 require (
